@@ -41,7 +41,7 @@ LLM:
   OpenAILLM:
     model_name: deepseek-chat
     url: https://api.deepseek.com
-    api_key: sk-afcf4c8629f04a8588288a03a6bc6021
+    api_key: sk-xx
 
 TTS:
   MacTTS:
@@ -72,14 +72,14 @@ Rag:
   emb_model: BAAI/bge-small-zh-v1.5
   model_name: deepseek-chat
   url: https://api.deepseek.com
-  api_key: sk-afcf4c8629f04a8588288a03a6bc6021
+  api_key: sk-xx
 
 Memory:
   dialogue_history_path: tmp/
   memory_file: tmp/memory.json
   model_name: deepseek-chat
   url: https://api.deepseek.com
-  api_key: sk-afcf4c8629f04a8588288a03a6bc6021
+  api_key: sk-xx
 
 TaskManager:
   functions_call_name: plugins/function_calls_config.json
