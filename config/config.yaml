@@ -5,7 +5,7 @@ logging:
   level: debug
 
 # 唤醒词
-WakeWord: 百聆
+WakeWord: 相一
 
 interrupt: false
 # 是否开启工具调用
@@ -17,6 +17,8 @@ selected_module:
   VAD: SileroVAD
   LLM: OpenAILLM
   TTS: EdgeTTS
+  # TTS: MacTTS
+  # TTS: CHATTTS
   Player: PygameSoundPlayer
 
 Recorder:
@@ -25,7 +27,8 @@ Recorder:
 
 ASR:
   FunASR:
-    model_dir: models/SenseVoiceSmall
+    #model_dir: models/SenseVoiceSmall
+    model_dir: FunAudioLLM/SenseVoiceSmall
     output_file: tmp/
 
 VAD:
@@ -38,7 +41,7 @@ LLM:
   OpenAILLM:
     model_name: deepseek-chat
     url: https://api.deepseek.com
-    api_key:
+    api_key: sk-afcf4c8629f04a8588288a03a6bc6021
 
 TTS:
   MacTTS:
@@ -51,8 +54,10 @@ TTS:
     lang: zh
     output_file: tmp/
   CosyvoiceTTS:
+    model_dir: FunAudioLLM/CosyVoice-300M-SFT
     output_file: tmp/
   CHATTTS:
+    model_dir: 2Noise/ChatTTS
     output_file: tmp/
 
 Player:
@@ -63,17 +68,18 @@ Player:
 
 Rag:
   doc_path: documents/
-  emb_model: models/bge-small-zh
+  # emb_model: models/bge-small-zh
+  emb_model: BAAI/bge-small-zh-v1.5
   model_name: deepseek-chat
   url: https://api.deepseek.com
-  api_key: null
+  api_key: sk-afcf4c8629f04a8588288a03a6bc6021
 
 Memory:
   dialogue_history_path: tmp/
   memory_file: tmp/memory.json
   model_name: deepseek-chat
   url: https://api.deepseek.com
-  api_key: null
+  api_key: sk-afcf4c8629f04a8588288a03a6bc6021
 
 TaskManager:
   functions_call_name: plugins/function_calls_config.json

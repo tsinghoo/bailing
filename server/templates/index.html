@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,6 +16,7 @@
             flex-direction: column;
             height: 100vh;
         }
+
         header {
             background: #007bff;
             color: white;
@@ -23,6 +25,7 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             border-bottom: 2px solid #0056b3;
         }
+
         #dialogue-container {
             flex: 1;
             max-width: 900px;
@@ -34,76 +37,100 @@
             flex-direction: column;
             gap: 10px;
             /* 隐藏滚动条 */
-            scrollbar-width: none; /* Firefox */
-            -ms-overflow-style: none; /* Internet Explorer and Edge */
+            scrollbar-width: none;
+            /* Firefox */
+            -ms-overflow-style: none;
+            /* Internet Explorer and Edge */
         }
+
         #dialogue-container::-webkit-scrollbar {
-            display: none; /* Chrome, Safari, and Opera */
+            display: none;
+            /* Chrome, Safari, and Opera */
         }
+
         .message {
             /*padding: 15px;*/
             position: relative;
             transition: background 0.3s, transform 0.2s;
             display: flex;
 
-            align-items: center;  /* 垂直居中 */
+            align-items: center;
+            /* 垂直居中 */
 
         }
+
         .message.role-user {
             color: #2e7d32;
             align-self: flex-start;
         }
+
         .message.role-bot {
             color: #f57c00;
             align-self: flex-end;
         }
+
         .message.role-admin {
             color: #5e35b1;
             align-self: flex-start;
         }
+
         .message.role-system {
             color: #37474f;
             align-self: center;
             text-align: center;
         }
+
         .role {
             font-weight: bold;
             margin-bottom: 5px;
             display: block;
         }
+
         .message-content {
             font-size: 16px;
             line-height: 1.5;
         }
+
         h1 {
             margin: 0;
             font-size: 28px;
             font-weight: 700;
         }
+
         .loading {
             text-align: center;
             font-size: 18px;
             color: #888;
             margin-top: 20px;
         }
+
         .fade-in {
             animation: fadeIn 1s ease-out;
         }
+
         @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
         }
+
         @media (max-width: 600px) {
             #dialogue-container {
                 padding: 10px;
                 height: calc(100vh - 80px);
             }
+
             .message-content {
                 font-size: 14px;
             }
         }
     </style>
 </head>
+
 <body>
     <header>
         <h1>百聆实时对话(BaiLing)</h1>
@@ -170,7 +197,7 @@
             container.scrollTop = container.scrollHeight;
         }
 
-        socket.on('update_dialogue', function(data) {
+        socket.on('update_dialogue', function (data) {
             updateDialogue(data);
         });
 
@@ -178,4 +205,5 @@
         socket.emit('connect');
     </script>
 </body>
+
 </html>
