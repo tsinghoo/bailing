@@ -170,3 +170,25 @@ Robot 负责高效的任务管理与记忆管理，能够智能地处理用户�
 ## Star History
 
 [![Star History Chart](https://api.star-history.com/svg?repos=wwbin2017/bailing&type=Date)](https://star-history.com/#wwbin2017/bailing&Date)
+
+#change log
+## env
+
+sudo apt install libpython3.9-dev
+sudo apt-get install portaudio19-dev
+
+wget https://ffmpeg.org/releases/ffmpeg-4.4.tar.bz2
+tar -xjf ffmpeg-4.4.tar.bz2
+cd ffmpeg-4.4
+
+
+pip install pysqlite3-binary
+vi /home/liqinghu/.local/lib/python3.9/site-packages/chromadb/__init__.py
+#Add the following at the beginning of chromadb/__init__.py:
+  __import__('pysqlite3')
+  import sys
+  sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+
+
+## from https://github.com/web5time/ASR-TTS
+
